@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+[#if configuration.type == "action"]
+	<button class="uni-button btn btn-${configuration.buttonSize} btn-${configuration.buttonType}" data-lfr-editable-id="action" data-lfr-editable-type="action">
+		Go Somewhere
+	</button>
+
+	[#else]
+		<div class="component-button text-break">
+			<a class="uni-button btn btn-${configuration.buttonSize} btn-${configuration.buttonType}" data-lfr-editable-id="link" data-lfr-editable-type="link" href="" id="fragment-${fragmentEntryLinkNamespace}-link">
+				Go Somewhere
+			</a>
+		</div>
+[/#if]

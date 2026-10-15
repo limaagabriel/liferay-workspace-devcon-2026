@@ -1,0 +1,61 @@
+#wrapper .uni-hero {
+	background: linear-gradient(135deg, var(--secondary-l0), var(--secondary));
+	color: var(--white);
+	padding: 7rem var(--spacer-5) 10rem;
+}
+
+#wrapper .uni-hero[data-tone='pink'] {
+	background: linear-gradient(135deg, var(--primary-l0), var(--primary));
+}
+
+#wrapper .uni-hero[data-tone='plum'] {
+	background: linear-gradient(135deg, var(--secondary-d2), var(--brand-color-4));
+}
+
+#wrapper .uni-hero__inner {
+	margin: 0 auto;
+	max-width: 70rem;
+}
+
+#wrapper .uni-hero__title {
+	color: inherit;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: clamp(2.25rem, 5vw, 3.5rem);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+	margin-bottom: var(--spacer-4);
+	max-width: 14em;
+}
+
+#wrapper .uni-hero__text {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1rem;
+	line-height: 1.75;
+	margin-bottom: var(--spacer-5);
+	max-width: 28rem;
+}
+
+#wrapper .uni-hero__text p:last-child {
+	margin-bottom: 0;
+}
+
+#wrapper .uni-hero__cta {
+	border: 2px solid currentColor;
+	border-radius: 999px;
+	color: inherit;
+	display: inline-block;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	padding: 0.75rem 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#wrapper .uni-hero__cta:hover {
+	background: var(--white);
+	color: var(--secondary-d1);
+}

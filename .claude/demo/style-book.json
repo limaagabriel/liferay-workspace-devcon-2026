@@ -1,0 +1,99 @@
+{
+	"_note": "Snapshot of My French School Style Book, read 2026-10-15. Restore the colors with PATCH /o/headless-admin-site/v1.0/design-libraries/f336ac67-c7f7-489a-edc5-2a069ec19126/style-books/2 and body {\"frontendTokensValues\": JSON.stringify(<frontendTokensValues below>)}.",
+	"externalReferenceCode": "2",
+	"frontendTokensValues": {
+		"classic_WAR_classictheme:brandColor1": {
+			"cssVariableMapping": "brand-color-1",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#DB0A7B"
+		},
+		"classic_WAR_classictheme:brandColor2": {
+			"cssVariableMapping": "brand-color-2",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#7E22CE"
+		},
+		"classic_WAR_classictheme:brandColor3": {
+			"cssVariableMapping": "brand-color-3",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#C026D3"
+		},
+		"classic_WAR_classictheme:brandColor4": {
+			"cssVariableMapping": "brand-color-4",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#3B0764"
+		},
+		"classic_WAR_classictheme:primaryColor": {
+			"cssVariableMapping": "primary",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#DB0A7B"
+		},
+		"classic_WAR_classictheme:primaryD1Color": {
+			"cssVariableMapping": "primary-d1",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#B80066"
+		},
+		"classic_WAR_classictheme:primaryD2Color": {
+			"cssVariableMapping": "primary-d2",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#8F004F"
+		},
+		"classic_WAR_classictheme:primaryL0Color": {
+			"cssVariableMapping": "primary-l0",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#F0479F"
+		},
+		"classic_WAR_classictheme:primaryL1Color": {
+			"cssVariableMapping": "primary-l1",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#F783BE"
+		},
+		"classic_WAR_classictheme:primaryL2Color": {
+			"cssVariableMapping": "primary-l2",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#FBC4E0"
+		},
+		"classic_WAR_classictheme:primaryL3Color": {
+			"cssVariableMapping": "primary-l3",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#FFF0F7"
+		},
+		"classic_WAR_classictheme:secondaryColor": {
+			"cssVariableMapping": "secondary",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#7E22CE"
+		},
+		"classic_WAR_classictheme:secondaryD1Color": {
+			"cssVariableMapping": "secondary-d1",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#6B21A8"
+		},
+		"classic_WAR_classictheme:secondaryD2Color": {
+			"cssVariableMapping": "secondary-d2",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#581C87"
+		},
+		"classic_WAR_classictheme:secondaryL0Color": {
+			"cssVariableMapping": "secondary-l0",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#A855F7"
+		},
+		"classic_WAR_classictheme:secondaryL1Color": {
+			"cssVariableMapping": "secondary-l1",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#C084FC"
+		},
+		"classic_WAR_classictheme:secondaryL2Color": {
+			"cssVariableMapping": "secondary-l2",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#E9D5FF"
+		},
+		"classic_WAR_classictheme:secondaryL3Color": {
+			"cssVariableMapping": "secondary-l3",
+			"tokenDefinitionId": "classic_WAR_classictheme",
+			"value": "#FAF5FF"
+		}
+	},
+	"key": "uni---style-book",
+	"name": "My French School Style Book",
+	"themeId": "classic_WAR_classictheme"
+}

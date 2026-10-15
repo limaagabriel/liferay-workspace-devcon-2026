@@ -1,0 +1,20 @@
+#wrapper .uni-button.btn {
+	border-radius: 999px;
+	border-width: 2px;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	padding: 0.75rem 2rem;
+	text-transform: uppercase;
+	transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+#wrapper .uni-button.btn:hover {
+	transform: translateY(-1px);
+}
+
+#wrapper .uni-button.btn-link {
+	padding-left: 0;
+	padding-right: 0;
+}

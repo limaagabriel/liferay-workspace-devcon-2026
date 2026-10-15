@@ -1,0 +1,52 @@
+#wrapper .uni-card .card {
+	border: 0;
+	border-radius: 0.25rem;
+	box-shadow: 0 1.5rem 3rem rgba(59, 7, 100, 0.1);
+	height: 100%;
+}
+
+#wrapper .uni-card img {
+	max-width: 100%;
+}
+
+/* Hide the built-in grey placeholder until an author picks a real image */
+
+#wrapper .uni-card img[src^='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJ'] {
+	display: none;
+}
+
+#wrapper .uni-card .card-body::before {
+	background: linear-gradient(135deg, var(--primary-l1), var(--primary));
+	border-radius: 50%;
+	content: '';
+	display: block;
+	height: 1.75rem;
+	margin-bottom: var(--spacer-3);
+	width: 1.75rem;
+}
+
+#wrapper .uni-card .card h2 {
+	color: var(--secondary-d2);
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.35;
+}
+
+#wrapper .uni-card [data-lfr-editable-id='03-content'] {
+	color: var(--brand-color-4);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	opacity: 0.8;
+}
+
+#wrapper .uni-card .card .link {
+	color: var(--primary);
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-decoration: none;
+	text-transform: uppercase;
+}

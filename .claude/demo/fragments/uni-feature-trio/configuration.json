@@ -1,0 +1,26 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "yes",
+					"label": "Overlap the section above",
+					"name": "overlap",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "yes"
+							},
+							{
+								"value": "no"
+							}
+						]
+					}
+				}
+			],
+			"label": "Feature Trio"
+		}
+	]
+}

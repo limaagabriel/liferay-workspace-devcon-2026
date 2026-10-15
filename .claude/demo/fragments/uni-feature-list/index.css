@@ -1,0 +1,124 @@
+#wrapper .uni-feature-list {
+	background: var(--white);
+	color: var(--secondary-d2);
+	padding: 5rem var(--spacer-5);
+}
+
+#wrapper .uni-feature-list__inner {
+	align-items: center;
+	display: grid;
+	gap: 3rem 4rem;
+	margin: 0 auto;
+	max-width: 70rem;
+}
+
+@media (min-width: 768px) {
+	#wrapper .uni-feature-list__inner {
+		grid-template-columns: 2fr 3fr;
+	}
+}
+
+#wrapper .uni-feature-list__stats {
+	background: linear-gradient(180deg, var(--white), var(--primary-l3));
+	border: 1px solid var(--primary-l2);
+	box-shadow: 0 1.5rem 3rem rgba(59, 7, 100, 0.08);
+	display: grid;
+	gap: 2rem;
+	padding: 2.5rem var(--spacer-4);
+	text-align: center;
+}
+
+#wrapper .uni-feature-list__stat-value {
+	color: var(--primary);
+	display: block;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 2.25rem;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+#wrapper .uni-feature-list__stat:nth-child(2) .uni-feature-list__stat-value {
+	color: var(--secondary);
+}
+
+#wrapper .uni-feature-list__stat-label {
+	display: block;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.875rem;
+	margin-top: var(--spacer-1);
+	opacity: 0.8;
+}
+
+#wrapper .uni-feature-list__title {
+	color: inherit;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	line-height: 1.15;
+	margin-bottom: var(--spacer-3);
+	max-width: 14em;
+}
+
+#wrapper .uni-feature-list__intro {
+	color: var(--brand-color-4);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.9375rem;
+	line-height: 1.75;
+	margin-bottom: 2.5rem;
+	opacity: 0.85;
+}
+
+#wrapper .uni-feature-list__item {
+	align-items: flex-start;
+	display: flex;
+	gap: var(--spacer-3);
+}
+
+#wrapper .uni-feature-list__item + .uni-feature-list__item {
+	margin-top: 2rem;
+}
+
+#wrapper .uni-feature-list .uni-icon {
+	flex: none;
+	height: 1.5rem;
+	margin-top: 0.1rem;
+	width: 1.5rem;
+}
+
+#wrapper .uni-feature-list .uni-icon--circle {
+	background: linear-gradient(135deg, var(--primary-l1), var(--primary));
+	border-radius: 50%;
+}
+
+#wrapper .uni-feature-list .uni-icon--diamond {
+	background: linear-gradient(135deg, var(--secondary-l0), var(--secondary-d1));
+	border-radius: 0.25rem;
+	transform: rotate(45deg) scale(0.8);
+}
+
+#wrapper .uni-feature-list .uni-icon--triangle {
+	background: linear-gradient(135deg, var(--brand-color-3), var(--secondary-l0));
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+#wrapper .uni-feature-list__item-title {
+	color: inherit;
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 1.0625rem;
+	font-weight: 500;
+	margin-bottom: var(--spacer-2);
+}
+
+#wrapper .uni-feature-list__item-text {
+	color: var(--brand-color-4);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	opacity: 0.8;
+}
+
+#wrapper .uni-feature-list__intro p:last-child,
+#wrapper .uni-feature-list__item-text p:last-child {
+	margin-bottom: 0;
+}

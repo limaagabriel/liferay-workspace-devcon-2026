@@ -1,0 +1,85 @@
+#wrapper .uni-feature-trio {
+	padding: 0 var(--spacer-5);
+	position: relative;
+	z-index: 1;
+}
+
+#wrapper .uni-feature-trio[data-overlap='yes'] {
+	margin-top: -6rem;
+}
+
+#wrapper .uni-feature-trio__card {
+	background: var(--white);
+	box-shadow: 0 1.5rem 3rem rgba(59, 7, 100, 0.1);
+	margin: 0 auto;
+	max-width: 70rem;
+	padding: 3.5rem var(--spacer-5);
+}
+
+#wrapper .uni-feature-trio__grid {
+	display: grid;
+	gap: 2.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+#wrapper .uni-feature-trio .uni-icon {
+	display: block;
+	height: 1.75rem;
+	margin-bottom: var(--spacer-3);
+	width: 1.75rem;
+}
+
+#wrapper .uni-feature-trio .uni-icon--circle {
+	background: linear-gradient(135deg, var(--primary-l1), var(--primary));
+	border-radius: 50%;
+}
+
+#wrapper .uni-feature-trio .uni-icon--diamond {
+	background: linear-gradient(135deg, var(--secondary-l0), var(--secondary-d1));
+	border-radius: 0.25rem;
+	transform: rotate(45deg) scale(0.8);
+}
+
+#wrapper .uni-feature-trio .uni-icon--triangle {
+	background: linear-gradient(135deg, var(--brand-color-3), var(--secondary-l0));
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+#wrapper .uni-feature-trio__title,
+#wrapper .uni-feature-trio__footer-title {
+	color: var(--secondary-d2);
+	font-family: Montserrat, 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.35;
+	margin-bottom: var(--spacer-3);
+	max-width: 14em;
+}
+
+#wrapper .uni-feature-trio__text,
+#wrapper .uni-feature-trio__footer-text {
+	color: var(--brand-color-4);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	opacity: 0.8;
+}
+
+#wrapper .uni-feature-trio__text p:last-child,
+#wrapper .uni-feature-trio__footer-text p:last-child {
+	margin-bottom: 0;
+}
+
+#wrapper .uni-feature-trio__footer {
+	border-top: 2px solid var(--secondary-d1);
+	display: grid;
+	gap: var(--spacer-3) 2.5rem;
+	margin-top: 3rem;
+	padding-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+	#wrapper .uni-feature-trio__footer {
+		grid-template-columns: 1fr 2fr;
+	}
+}

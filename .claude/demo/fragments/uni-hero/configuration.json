@@ -1,0 +1,29 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "purple",
+					"label": "Tone",
+					"name": "tone",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "purple"
+							},
+							{
+								"value": "pink"
+							},
+							{
+								"value": "plum"
+							}
+						]
+					}
+				}
+			],
+			"label": "Hero"
+		}
+	]
+}

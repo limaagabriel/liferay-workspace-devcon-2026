@@ -1,0 +1,29 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "lilac",
+					"label": "Tone",
+					"name": "tone",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "lilac"
+							},
+							{
+								"value": "pink"
+							},
+							{
+								"value": "purple"
+							}
+						]
+					}
+				}
+			],
+			"label": "Video CTA"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+#wrapper .uni-paragraph {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+#wrapper .uni-paragraph p:last-child {
+	margin-bottom: 0;
+}
+
+#wrapper .uni-paragraph img {
+	max-width: 100%;
+}
