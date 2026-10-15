@@ -5,11 +5,21 @@
 // Copy it, change the content, run it.
 //
 // Usage: node reference-demo.mjs <siteErc> "<Site Name>"
+import fs from 'node:fs';
 
 const [SITE, SITE_NAME] = process.argv.slice(2);
 const B = 'http://localhost:8080';
 const H = {Authorization: 'Basic ' + Buffer.from('test@liferay.com:test').toString('base64'), 'Content-Type': 'application/json'};
-const LIB = 'f336ac67-c7f7-489a-edc5-2a069ec19126';
+
+// Library IDs, written by create-design-library.mjs. Absolute path: this script runs from a copy in the scratchpad.
+
+const IDS_FILE = '/home/me/dev/workspaces/devcon-learn-french/.claude/demo/design-library.json';
+if (!fs.existsSync(IDS_FILE)) {
+	console.log(`Missing ${IDS_FILE}. Run: node .claude/demo/create-design-library.mjs`);
+	process.exit(1);
+}
+const IDS = JSON.parse(fs.readFileSync(IDS_FILE, 'utf8'));
+const LIB = IDS.libraryErc;
 
 async function call(method, path, body) {
 	const t0 = Date.now();
@@ -26,7 +36,7 @@ async function call(method, path, body) {
 // Library fragment code, inlined on every placed instance (required for non built-in fragments)
 
 const libraryFragments = Object.fromEntries((await (await fetch(B + '/api/jsonws/invoke', {
-	body: JSON.stringify({'/fragment.fragmententry/get-fragment-entries': {fragmentCollectionId: 36822}}),
+	body: JSON.stringify({'/fragment.fragmententry/get-fragment-entries': {fragmentCollectionId: IDS.fragmentCollectionId}}),
 	headers: H,
 	method: 'POST',
 })).json()).map((e) => [e.fragmentEntryKey, e]));
@@ -112,7 +122,7 @@ const elements = (prefix) => withPositions([
 	], {widthType: 'Fixed'})]),
 ]);
 
-const settings = {styleBookItemExternalReference: {externalReferenceCode: '2', scope: {type: 'AssetLibrary', externalReferenceCode: LIB}}};
+const settings = {styleBookItemExternalReference: {externalReferenceCode: IDS.styleBookErc, scope: {type: 'AssetLibrary', externalReferenceCode: LIB}}};
 
 const spec = (erc, status, extra = {}) => ({
 	type: 'ContentPageSpecification', externalReferenceCode: erc, status, settings,

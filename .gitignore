@@ -13,6 +13,7 @@
 **/test-coverage
 **/tmp
 **/.web_bundle_build
+.claude/demo/design-library.json
 .gradle
 .idea
 /bundles

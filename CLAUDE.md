@@ -46,6 +46,8 @@ Narrate briefly: one short line per step, so the audience can follow.
 
 ## How to Run It
 
+0. Only if `.claude/demo/design-library.json` is missing: run `node .claude/demo/create-design-library.mjs` (see
+   "Recreate the Library"). The demo script reads the library IDs from that file and stops if it is absent.
 1. Copy `.claude/demo/reference-demo.mjs` to the scratchpad directory.
 2. Edit only the **content**: site name, the `elements()` tree, page name, and URL. Keep the helpers (`call`, `text`, `frag`, `box`, `withPositions`, `spec`) and the three calls as they are — every line of them was learned from a real error.
 3. Run: `node <copy>.mjs <site-erc> "<Site Name>"`. It prints each call with status and time, then the page URL.
@@ -75,9 +77,19 @@ Node 24 is installed (`fetch` built in). The script exits on the first non-2xx a
 | --- | --- |
 | Name | My French School Design Library (type `DesignLibrary`) |
 | ERC | `f336ac67-c7f7-489a-edc5-2a069ec19126` — `$LIB` below |
-| Group ID | `36311` (DepotEntry `36310`) |
+| Group ID | `36311` on 2026-10-15 (DepotEntry `36310`) — current value in `design-library.json` |
 | Style book | **My French School Style Book** — ERC `2`, key `uni---style-book`, theme Classic, published |
-| Fragment set | **My French School Fragment Set** — ERC/key `uni-fragment-set`, `fragmentCollectionId` `36822`, 5 fragments (below) |
+| Fragment set | **My French School Fragment Set** — ERC/key `uni-fragment-set`, `fragmentCollectionId` `36822` on 2026-10-15 — current value in `design-library.json`; 9 fragments (below) |
+
+### Recreate the Library
+
+`node .claude/demo/create-design-library.mjs` builds the whole library from files: the library (by ERC), the style
+book (colors in the script's `STYLE_BOOK` constant), the fragment set and the 9 fragments (from `.claude/demo/fragments/`).
+It finds each item by ERC or key first and creates only what is missing; it never deletes. It ends by writing the
+numeric IDs it confirmed to `.claude/demo/design-library.json` — an output only, local to this database, read by
+`reference-demo.mjs`. Rerunning the script always refreshes it. Verified 2026-10-15: create path on a throwaway
+library (`LIB_ERC=… LIB_NAME=… OUT=…`, see the script header) and a find-only run on the real one, each followed by a
+demo page that passed the "Verify" checks.
 
 Tokens in My French School Style Book. White text passes WCAG AA on `primary` (4.84:1) and `secondary` (6.98:1).
 
@@ -100,7 +112,8 @@ Edit the book: `PATCH /o/headless-admin-site/v1.0/design-libraries/$LIB/style-bo
 `{"frontendTokensValues": "<JSON string>"}`. The string maps `"classic_WAR_classictheme:<tokenName>"` to
 `{"cssVariableMapping":"<css-var>","tokenDefinitionId":"classic_WAR_classictheme","value":"<value>"}`.
 It writes the published version directly.
-Saved copy of the colors: `.claude/demo/style-book.json` (snapshot 2026-10-15) — restore with the PATCH above.
+Source of the colors: the `STYLE_BOOK` constant in `.claude/demo/create-design-library.mjs` (token name →
+CSS variable, value) — the script builds this string from it and applies it with the PATCH above.
 
 ## Verified Calls
 
@@ -130,7 +143,7 @@ All on `http://localhost:8080`, Basic auth, `Content-Type: application/json`.
    `{"fragmentReferenceType":"FragmentItemExternalReference","className":"com.liferay.fragment.model.FragmentEntry","externalReferenceCode":"uni-<name>","scope":{"type":"AssetLibrary","externalReferenceCode":"$LIB"}}`
    **and** their `html`, `css`, `configuration` must be inlined on the `fragmentInstance`. Without the inline code the call
    still returns 200 but every fragment renders as an empty `<div>`. The script reads the code with
-   JSON-WS `POST /api/jsonws/invoke` `{"/fragment.fragmententry/get-fragment-entries": {"fragmentCollectionId": 36822}}`.
+   JSON-WS `POST /api/jsonws/invoke` `{"/fragment.fragmententry/get-fragment-entries": {"fragmentCollectionId": <from design-library.json>}}`.
 10. **Nesting needs explicit links.** Nested `pageElements` alone are ignored: the call returns 200 but every element is
     saved flat under the root, so containers render empty and children appear out of order. Each element needs an
     `externalReferenceCode` (unique within the site, so prefix it with the spec ERC) and each child a
@@ -173,8 +186,8 @@ The first five are copies of the built-in Basic Components (**same editable IDs 
 | `uni-feature-list` | `stat-1…3`, `stat-1…3-label`, `title`, `intro`, `item-1…3-title`, `item-1…3-text` | — | key-number panel + icon list, 2 columns |
 
 Source of truth: `.claude/demo/fragments/<key>/` (`fragment.json`, `index.html`, `index.css`, `configuration.json`).
-Apply with `node .claude/demo/create-uni-fragments.mjs`: it creates missing fragments and updates existing ones
-(JSON-WS `add-fragment-entry` / `update-fragment-entry`, `groupId` 36311; the REST endpoints need `LPD-39244`, off).
+Apply with `node .claude/demo/create-design-library.mjs` (see "Recreate the Library"): it creates missing fragments
+and updates existing ones (JSON-WS `add-fragment-entry` / `update-fragment-entry`; the REST endpoints need `LPD-39244`, off).
 Pages already placing a fragment keep their old copy; only new pages pick up changes.
 
 Fallback — built-in fragments: `{"fragmentReferenceType":"DefaultFragmentReference","defaultFragmentKey":"BASIC_COMPONENT-<name>"}`, no inline code needed.
